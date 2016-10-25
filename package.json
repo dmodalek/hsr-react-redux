@@ -1,0 +1,19 @@
+{
+  "name": "hsr-react-redux",
+  "version": "1.0.0",
+  "description": "This project is part of the [HSR CAS Frontend Engineering](https://www.hsr.ch/CAS-Front-End-Engineering.12432.0.html)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmodalek/hsr-react-redux.git"
+  },
+  "author": "Dominic Modalek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmodalek/hsr-react-redux/issues"
+  },
+  "homepage": "https://github.com/dmodalek/hsr-react-redux#readme"
+}
