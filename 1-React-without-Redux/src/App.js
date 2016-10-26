@@ -15,8 +15,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Counter value={this.state.count} step={2} handleClick={this.handleCounterIncrement} />
-          <Likes value={this.state.count} />
+        <Counter value={this.state.count} step={2} handleClick={this.handleCounterIncrement} />
+        <Likes value={this.state.count} />
       </div>
     );
   }
