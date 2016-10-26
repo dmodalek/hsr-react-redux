@@ -48,5 +48,3 @@ npm install & npm start
 ### Bonus
 
 1. Filter out the selected movies from the other lists
-
-    > Note: Use initialState
