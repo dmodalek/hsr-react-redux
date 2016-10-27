@@ -3,6 +3,7 @@
 ## Run
 
 ```sh
+npm install -g json-server
 npm run server
 npm install & npm start
 ```
