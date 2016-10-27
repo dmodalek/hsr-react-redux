@@ -15,9 +15,9 @@ const counterReducer = (state = initialState, action) => {
     case 'IS_LOADING':
       return { ...state, isLoading: action.status };
     case 'INCREMENT':
-      return { ...state, count: state.count + 1 };
+      return { ...state, count: state.count + action.count };
     case 'DECREMENT':
-      return { ...state, count: state.count - 1 };
+      return { ...state, count: state.count - action.count };
     default:
       return state;
   }

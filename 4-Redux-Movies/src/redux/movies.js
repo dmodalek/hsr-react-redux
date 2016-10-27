@@ -20,19 +20,27 @@ export const getMovies = (state) => {
 }
 
 export const getMoviesWithoutSelection = (state) => {
-  // TODO
+  return getMovies(state)
+    .filter((movie) => state.movies.selection.includes(movie.id) === false)
 }
 
 export const getMovies3D = (state) => {
-  // TODO
+  const movies = getMoviesWithoutSelection(state)
+  return movies
+    .filter((movie) => movie.attribute && movie.attribute.includes('_3d'))
+    .filter((movie) => state.movies.selection.includes(movie.id) === false)
 }
 
 export const getMoviesImax = (state) => {
-  // TODO
+    const movies = getMoviesWithoutSelection(state)
+    return movies
+      .filter((movie) => movie.attribute && movie.attribute.includes('imax'))
 }
 
 export const getMoviesSelection = (state) => {
-  // TODO
+    const movies = getMovies(state)
+    return movies
+      .filter((movie) => state.movies.selection.includes(movie.id))
 }
 
 // ------------------------------------

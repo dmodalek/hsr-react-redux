@@ -45,7 +45,3 @@ npm install & npm start
 1. When clicking on a movie title, add its movie id to a Redux state called `selection: {}`
 
 2. Show all the selected movies in a movie list component using a container `MovieListSelection`
-
-### Bonus
-
-1. Filter out the selected movies from the other lists

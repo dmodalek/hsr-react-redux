@@ -8,17 +8,23 @@ function isLoading(status) {
   }
 }
 
-function increment() {
+function increment(count) {
   return {
-    type: 'INCREMENT'
+    type: 'INCREMENT',
+    count
   }
 }
 
 function incrementAsync() {
   return (dispatch, getState) => {
+    dispatch(isLoading(true))
     setTimeout(() => {
-      // TODO
-      console.log('do something')
+      if (getState().count % 2 === 0) {
+        dispatch(increment(2))
+      } else {
+        dispatch(increment(1))
+      }
+      dispatch(isLoading(false))
     }, 1000);
   };
 }
@@ -53,7 +59,7 @@ class App extends Component {
         <p>Is Loading: { store.getState().isLoading ? 'Yep' : 'Nope' }</p>
         <Counter
           value={store.getState().count}
-          onIncrement={() => store.dispatch(increment())}
+          onIncrement={() => store.dispatch(incrementAsync())}
           onDecrement={() => store.dispatch(decrement())}
         />
       </div>

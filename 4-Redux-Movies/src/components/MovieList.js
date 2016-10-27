@@ -12,7 +12,7 @@ class MovieList extends Component {
     }
 
     handleClick = (id) => {
-        // TODO: add to selection
+      this.props.doAddToSelection(id)
     }
 
     render() {
@@ -24,6 +24,7 @@ class MovieList extends Component {
                         return (
                             <div key={movie.id}>
                                 <p><a onClick={() => { this.handleClick(movie.id) }} href="#">{movie.title}</a></p>
+                                <small>{movie.details.synopsis_de}</small>
                             </div>
                         )
                     })
