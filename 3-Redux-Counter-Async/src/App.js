@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Counter from './Counter';
+import PropTypes from 'prop-types'
 
-function isLoading(status) {
-  return {
-    type: 'IS_LOADING',
-    status
-  }
-}
+// function isLoading(status) {
+//   return {
+//     type: 'IS_LOADING',
+//     status
+//   }
+// }
 
 function increment() {
   return {
@@ -14,14 +15,14 @@ function increment() {
   }
 }
 
-function incrementAsync() {
-  return (dispatch, getState) => {
-    setTimeout(() => {
-      // TODO
-      console.log('do something')
-    }, 1000);
-  };
-}
+// function incrementAsync() {
+//   return (dispatch, getState) => {
+//     setTimeout(() => {
+//       // TODO
+//       console.log('do something')
+//     }, 1000);
+//   };
+// }
 
 function decrement() {
   return {
@@ -33,7 +34,7 @@ function decrement() {
 class App extends Component {
 
   static propTypes = {
-    store: React.PropTypes.object.isRequired
+    store: PropTypes.object.isRequired
   }
 
   componentDidMount() {

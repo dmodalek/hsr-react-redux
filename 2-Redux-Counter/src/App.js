@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Counter from './Counter';
+import PropTypes from 'prop-types'
 
 class App extends Component {
 
   static propTypes = {
-    store: React.PropTypes.object.isRequired
+    store: PropTypes.object.isRequired
   }
 
   componentDidMount() {

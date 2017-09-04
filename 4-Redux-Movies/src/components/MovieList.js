@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types'
 
 class MovieList extends Component {
 
     static propTypes = {
-        movies: React.PropTypes.array.isRequired,
-        doAddToSelection: React.PropTypes.func
+        movies: PropTypes.array.isRequired,
+        doAddToSelection: PropTypes.func
     }
 
     static defaultProps = {
@@ -23,7 +24,7 @@ class MovieList extends Component {
                     : this.props.movies.map((movie) => {
                         return (
                             <div key={movie.id}>
-                                <p><a onClick={() => { this.handleClick(movie.id) }} href="#">{movie.title}</a></p>
+                                <p><a onClick={() => { this.handleClick(movie.id) }} href="">{movie.title}</a></p>
                             </div>
                         )
                     })

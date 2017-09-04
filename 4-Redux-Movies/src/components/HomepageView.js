@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import MovieList from './MovieList'
+import PropTypes from 'prop-types'
 
 class HomepageView extends Component {
 
   static propTypes = {
-    isLoading: React.PropTypes.bool.isRequired,
-    movies: React.PropTypes.array.isRequired,
-    doLoadMovies: React.PropTypes.func.isRequired
+    isLoading: PropTypes.bool.isRequired,
+    movies: PropTypes.array.isRequired,
+    doLoadMovies: PropTypes.func.isRequired
   }
 
   componentDidMount () {
