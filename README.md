@@ -2,7 +2,7 @@
 
 This project is part of the [HSR CAS Frontend Engineering](https://www.hsr.ch/CAS-Front-End-Engineering.12432.0.html)
 
-The slides can be found here: https://slides.com/dmodalek/hsr-react-redux
+The slides can be found here: https://slides.com/dmodalek/hsr-react-redux-2017
 
 ## Examples
 - [1. React without Redux](1-React-without-Redux/README.md)
