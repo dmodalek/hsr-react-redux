@@ -8,7 +8,7 @@ npm install && npm start
 
 ## Todo
 
-1. Have a look at all the files starting with `index.js`
+1. Have a look at all the files. Start with `index.js`
 
 2. How do the components communicate?
 
