@@ -24,7 +24,7 @@ class MovieList extends Component {
                     : this.props.movies.map((movie) => {
                         return (
                             <div key={movie.id}>
-                                <p><a onClick={() => { this.handleClick(movie.id) }} href="">{movie.title}</a></p>
+                                <p><button onClick={() => { this.handleClick(movie.id) }}>{movie.title}</button></p>
                             </div>
                         )
                     })
