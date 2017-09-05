@@ -5,7 +5,7 @@
 ```sh
 npm install -g json-server
 npm run server
-npm install & npm start
+npm install && npm start
 ```
 
 ## Part I - Redux Advanced
@@ -16,7 +16,7 @@ npm install & npm start
 
 2. Add a selector `getMovies3D` to get only movies that have the `_3d` Attribute
 
-    > Note: you can use `Array.prototype.filter()` and `Array.prototype.includes()` for this
+> Note: you can use `Array.prototype.filter()` and `Array.prototype.includes()` for this
 
 ### Bonus
 
@@ -37,7 +37,7 @@ npm install & npm start
 
 1. Show an error message when the data could not be loaded
 
-    > Note: To simulate this, just don't start the api server
+> Note: To simulate this, just don't start the api server
 
 
 ## Part III - Data Handling

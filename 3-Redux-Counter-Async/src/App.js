@@ -1,62 +1,62 @@
-import React, { Component } from 'react';
-import Counter from './Counter';
+import React, { Component } from "react";
+import Counter from "./Counter";
+import PropTypes from "prop-types";
 
-function isLoading(status) {
-  return {
-    type: 'IS_LOADING',
-    status
-  }
-}
+// function isLoading(status) {
+//   return {
+//     type: 'IS_LOADING',
+//     status
+//   }
+// }
 
 function increment(count) {
   return {
-    type: 'INCREMENT',
+    type: "INCREMENT",
     count
-  }
+  };
 }
 
 function incrementAsync() {
   return (dispatch, getState) => {
-    dispatch(isLoading(true))
+    dispatch(isLoading(true));
     setTimeout(() => {
       if (getState().count % 2 === 0) {
-        dispatch(increment(2))
+        dispatch(increment(2));
       } else {
-        dispatch(increment(1))
+        dispatch(increment(1));
       }
-      dispatch(isLoading(false))
+      dispatch(isLoading(false));
     }, 1000);
   };
 }
 
 function decrement() {
   return {
-    type: 'DECREMENT',
+    type: "DECREMENT",
     count: 1
-  }
+  };
 }
 
 class App extends Component {
-
   static propTypes = {
-    store: React.PropTypes.object.isRequired
-  }
+    store: PropTypes.object.isRequired
+  };
 
   componentDidMount() {
     this.unsubscribe = this.props.store.subscribe(() => {
-      this.render()
-    })
+      this.render();
+    });
   }
 
   componentWillUnmount() {
-    this.unsubscribe()
+    this.unsubscribe();
   }
 
   render() {
-    const { store } = this.props
+    const { store } = this.props;
     return (
       <div>
-        <p>Is Loading: { store.getState().isLoading ? 'Yep' : 'Nope' }</p>
+        <p>Is Loading: {store.getState().isLoading ? "Yep" : "Nope"}</p>
         <Counter
           value={store.getState().count}
           onIncrement={() => store.dispatch(incrementAsync())}

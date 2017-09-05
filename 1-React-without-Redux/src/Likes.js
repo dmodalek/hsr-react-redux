@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
 class Likes extends Component {
 
   static propTypes = {
-    value: React.PropTypes.number.isRequired
+    value: PropTypes.number.isRequired
   }
 
   render() {
