@@ -25,14 +25,13 @@ class MovieList extends Component {
             return (
               <div key={movie.id}>
                 <p>
-                  <a
+                  <button
                     onClick={() => {
                       this.handleClick(movie.id);
                     }}
-                    href=""
                   >
                     {movie.title}
-                  </a>
+                  </button>
                 </p>
                 <small>{movie.details.synopsis_de}</small>
               </div>
