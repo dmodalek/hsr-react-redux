@@ -88,8 +88,8 @@ const doLoadMovies = () => (dispatch, getState) => {
   return fetchMovies()
   .then((json) => {
     if (json.movies.length !== 0) {
-      dispatch(isLoading(false))
-      return dispatch(receiveMovies(json.movies))
+      dispatch(receiveMovies(json.movies))
+      return dispatch(isLoading(false))
     }
     throw new Error('Movies not available :-(')
   })
