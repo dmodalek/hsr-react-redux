@@ -23,11 +23,8 @@ const counterReducer = (state = initialState, action) => {
   }
 }
 
-let middleware = applyMiddleware(thunk)
-const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-middleware = compose(middleware, devTools)
-
-const store = createStore(counterReducer, middleware)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(counterReducer, composeEnhancers(applyMiddleware(thunk)));
 
 const render = () => ReactDOM.render(
   <App store={store} />,
