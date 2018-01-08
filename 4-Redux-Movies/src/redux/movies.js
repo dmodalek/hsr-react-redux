@@ -28,7 +28,6 @@ export const getMovies3D = (state) => {
   const movies = getMoviesWithoutSelection(state)
   return movies
     .filter((movie) => movie.attribute && movie.attribute.includes('_3d'))
-    .filter((movie) => state.movies.selection.includes(movie.id) === false)
 }
 
 export const getMoviesImax = (state) => {
