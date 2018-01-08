@@ -9,11 +9,8 @@ import './index.css';
 
 const initialState = {}
 
-let middleware = applyMiddleware(thunk)
-const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-middleware = compose(middleware, devTools)
-
-const store = createStore(rootReducer, initialState, middleware)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <Provider store={store}>
