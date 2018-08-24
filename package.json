@@ -4,7 +4,8 @@
   "description": "This project is part of the [HSR CAS Frontend Engineering](https://www.hsr.ch/CAS-Front-End-Engineering.12432.0.html)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --single-quote true --print-width 120 --write \"./**/*.js\""
   },
   "repository": {
     "type": "git",
