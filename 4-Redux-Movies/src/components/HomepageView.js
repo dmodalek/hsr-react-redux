@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import MovieList from "./MovieList";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import MovieList from './MovieList';
+import PropTypes from 'prop-types';
 
 class HomepageView extends Component {
   static propTypes = {
@@ -23,20 +23,21 @@ class HomepageView extends Component {
     return (
       <div className="container">
         {this.state.error ? (
-          <div style={{ color: "crimson" }}>Loading the movies failed! <span role="img" aria-label="Monkey">🙈</span></div>
+          <div style={{ color: 'crimson' }}>
+            Loading the movies failed!{' '}
+            <span role="img" aria-label="Monkey">
+              🙈
+            </span>
+          </div>
         ) : (
-          ""
-        )}
-        
-        <h2>Movies</h2>
-        {this.props.isLoading ? (
-          "Loading..."
-        ) : (
-          <MovieList movies={this.props.movies} />
+          ''
         )}
 
+        <h2>Movies</h2>
+        {this.props.isLoading ? 'Loading...' : <MovieList movies={this.props.movies} />}
+
         <h2>Movies 3D</h2>
-        {this.props.isLoading ? "Loading..." : <MovieList movies={[]} />}
+        {this.props.isLoading ? 'Loading...' : <MovieList movies={[]} />}
       </div>
     );
   }

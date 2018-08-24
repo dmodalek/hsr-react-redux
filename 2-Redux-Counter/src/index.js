@@ -13,14 +13,11 @@ const counterReducer = (state = 0, action) => {
     default:
       return state;
   }
-}
+};
 
 const store = createStore(counterReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-const render = () => ReactDOM.render(
-  <App store={store} />,
-  document.getElementById('root')
-);
+const render = () => ReactDOM.render(<App store={store} />, document.getElementById('root'));
 
-render()
-store.subscribe(render)
+render();
+store.subscribe(render);

@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { applyMiddleware, createStore, compose } from 'redux'
-import thunk from 'redux-thunk'
+import { applyMiddleware, createStore, compose } from 'redux';
+import thunk from 'redux-thunk';
 import App from './App';
 import './index.css';
 
 const initialState = {
-    isLoading: false,
-    count: 0
-}
+  isLoading: false,
+  count: 0
+};
 
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -21,15 +21,12 @@ const counterReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(counterReducer, composeEnhancers(applyMiddleware(thunk)));
 
-const render = () => ReactDOM.render(
-  <App store={store} />,
-  document.getElementById('root')
-);
+const render = () => ReactDOM.render(<App store={store} />, document.getElementById('root'));
 
-render()
-store.subscribe(render)
+render();
+store.subscribe(render);

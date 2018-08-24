@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Counter from './Counter';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 // function isLoading(status) {
 //   return {
@@ -12,7 +12,7 @@ import PropTypes from 'prop-types'
 function increment() {
   return {
     type: 'INCREMENT'
-  }
+  };
 }
 
 // function incrementAsync() {
@@ -28,30 +28,29 @@ function decrement() {
   return {
     type: 'DECREMENT',
     count: 1
-  }
+  };
 }
 
 class App extends Component {
-
   static propTypes = {
     store: PropTypes.object.isRequired
-  }
+  };
 
   componentDidMount() {
     this.unsubscribe = this.props.store.subscribe(() => {
-      this.render()
-    })
+      this.render();
+    });
   }
 
   componentWillUnmount() {
-    this.unsubscribe()
+    this.unsubscribe();
   }
 
   render() {
-    const { store } = this.props
+    const { store } = this.props;
     return (
       <div>
-        <p>Is Loading: { store.getState().isLoading ? 'Yep' : 'Nope' }</p>
+        <p>Is Loading: {store.getState().isLoading ? 'Yep' : 'Nope'}</p>
         <Counter
           value={store.getState().count}
           onIncrement={() => store.dispatch(increment())}

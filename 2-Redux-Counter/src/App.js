@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
 import Counter from './Counter';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 class App extends Component {
-
   static propTypes = {
     store: PropTypes.object.isRequired
-  }
+  };
 
   componentDidMount() {
     this.unsubscribe = this.props.store.subscribe(() => {
-      this.render()
-    })
+      this.render();
+    });
   }
 
   componentWillUnmount() {
-    this.unsubscribe()
+    this.unsubscribe();
   }
 
   render() {
-    const { store } = this.props
+    const { store } = this.props;
     return (
       <div>
         <Counter
