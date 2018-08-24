@@ -3,14 +3,13 @@ import Counter from './Counter';
 import Likes from './Likes';
 
 class App extends Component {
-
   state = {
     count: 0
-  }
+  };
 
-  handleCounterIncrement = (step) => {
-    this.setState({ count: this.state.count + step})
-  }
+  handleCounterIncrement = step => {
+    this.setState({ count: this.state.count + step });
+  };
 
   render() {
     return (

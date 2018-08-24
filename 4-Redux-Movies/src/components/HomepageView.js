@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import MovieList from "./MovieList";
-import MovieListImax from "./../container/MovieListImax";
-import MovieListSelection from "./../container/MovieListSelection";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import MovieList from './MovieList';
+import MovieListImax from './../container/MovieListImax';
+import MovieListSelection from './../container/MovieListSelection';
+import PropTypes from 'prop-types';
 
 class HomepageView extends Component {
   static propTypes = {
@@ -29,7 +29,7 @@ class HomepageView extends Component {
       })
       .catch(() => {
         // whoops!
-        console.log("Could not load data...");
+        console.log('Could not load data...');
         this.setState({ error: true });
       });
   }
@@ -38,37 +38,32 @@ class HomepageView extends Component {
     return (
       <div className="container">
         {this.state.error ? (
-          <div style={{ color: "crimson" }}>Loading the movies failed! <span role="img" aria-label="Monkey">🙈</span></div>
+          <div style={{ color: 'crimson' }}>
+            Loading the movies failed!{' '}
+            <span role="img" aria-label="Monkey">
+              🙈
+            </span>
+          </div>
         ) : (
-          ""
+          ''
         )}
-        
+
         <h2>Movies</h2>
         {this.props.isLoading ? (
-          "Loading..."
+          'Loading...'
         ) : (
-          <MovieList
-            movies={this.props.movies}
-            doAddToSelection={this.props.doAddToSelection}
-          />
+          <MovieList movies={this.props.movies} doAddToSelection={this.props.doAddToSelection} />
         )}
 
         <h2>Movies 3D</h2>
         {this.props.isLoading ? (
-          "Loading..."
+          'Loading...'
         ) : (
-          <MovieList
-            movies={this.props.movies3D}
-            doAddToSelection={this.props.doAddToSelection}
-          />
+          <MovieList movies={this.props.movies3D} doAddToSelection={this.props.doAddToSelection} />
         )}
 
         <h2>Movies IMAX</h2>
-        {this.props.isLoading ? (
-          "Loading..."
-        ) : (
-          <MovieListImax doAddToSelection={this.props.doAddToSelection} />
-        )}
+        {this.props.isLoading ? 'Loading...' : <MovieListImax doAddToSelection={this.props.doAddToSelection} />}
 
         <h2>Movies Selection</h2>
         <MovieListSelection />

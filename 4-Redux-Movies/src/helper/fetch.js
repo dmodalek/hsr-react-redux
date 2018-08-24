@@ -9,21 +9,21 @@
  * @return promise         Allows to call promise methods on the returned obj
  */
 
-export default function (url, options) {
+export default function(url, options) {
   // Check status
-  const status = (response) => {
+  const status = response => {
     if (response.status >= 200 && response.status < 300) {
-      return Promise.resolve(response)
+      return Promise.resolve(response);
     } else {
-      return Promise.reject(new Error(response.statusText))
+      return Promise.reject(new Error(response.statusText));
     }
-  }
+  };
   // Get json
-  const json = (response) => {
-    return response.json()
-  }
+  const json = response => {
+    return response.json();
+  };
   // Fetch
   return fetch(url, options)
     .then(status)
-    .then(json)
+    .then(json);
 }

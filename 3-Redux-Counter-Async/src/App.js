@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Counter from "./Counter";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import Counter from './Counter';
+import PropTypes from 'prop-types';
 
 // function isLoading(status) {
 //   return {
@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 
 function increment(count) {
   return {
-    type: "INCREMENT",
+    type: 'INCREMENT',
     count
   };
 }
@@ -32,7 +32,7 @@ function incrementAsync() {
 
 function decrement() {
   return {
-    type: "DECREMENT",
+    type: 'DECREMENT',
     count: 1
   };
 }
@@ -56,7 +56,7 @@ class App extends Component {
     const { store } = this.props;
     return (
       <div>
-        <p>Is Loading: {store.getState().isLoading ? "Yep" : "Nope"}</p>
+        <p>Is Loading: {store.getState().isLoading ? 'Yep' : 'Nope'}</p>
         <Counter
           value={store.getState().count}
           onIncrement={() => store.dispatch(incrementAsync())}
