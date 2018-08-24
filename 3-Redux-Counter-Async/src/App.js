@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import Counter from './Counter';
 import PropTypes from 'prop-types';
 
-// function isLoading(status) {
-//   return {
-//     type: 'IS_LOADING',
-//     status
-//   }
-// }
+function isLoading(status) {
+  return {
+    type: 'IS_LOADING',
+    status
+  };
+}
 
 function increment(count) {
   return {
